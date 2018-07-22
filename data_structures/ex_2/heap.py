@@ -5,10 +5,17 @@ def heapsort(arr):
   for i in arr:
     new_heap.insert(i)
 
-  while new_heap.size > 0:
-    sorted.insert(0, new_heap.delete())
-  return sorted
+  # while new_heap.size > 0:
+  #   sorted.insert(0, new_heap.delete())
+  # return sorted
+  # The above code is O(n)
+
+  for i in arr:
+    sorted.append(new_heap.delete())
   
+  sorted.reverse()
+
+  return sorted
 
 class Heap:
   def __init__(self):
